@@ -108,6 +108,7 @@
 - [x] 支持MCP_Client
 - [x] 支持OpenAI接口联网搜索🔍
 - [x] 支持视频播放▶️
+- [x] 支持openai 首个token测速
 
 ## 联系方式
 
