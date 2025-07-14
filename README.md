@@ -133,6 +133,8 @@
 <img src="zsm.jpg" width="260" height="280" alt="赞助" style="border-radius: 12px;" />
 </div>
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/V7V71I0TE0)
+
 # 赞助榜
 - ### ***上海沃欧文化传媒有限公司***
 
