@@ -12,8 +12,11 @@
   <a href="https://github.com/TOM88812/xiaozhi-android-client/releases/latest">
     <img src="https://img.shields.io/github/downloads/TOM88812/xiaozhi-android-client/total?style=flat-square&logo=github&color=52c41a1&maxAge=86400" alt="Download"/>
   </a>
-</p>
+  <a href="https://wiki.lhht.cc/welcome">
+    <img src="https://img.shields.io/badge/文档-Wiki-yellow?logo=wikipedia">
+  </a>
 
+</p>
 > 目前已经发布新版本，敬请体验！flutter IOS与安卓回音消除已实现，~~欢迎大家PR~~。
 > 觉得项目对您有用的，可以赞赏一下，您的每一次赞赏都是我前进的动力。
 > Dify支持发送图片交互。可以添加多个小智智能体到聊天列表。
