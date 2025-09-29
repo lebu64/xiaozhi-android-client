@@ -114,13 +114,13 @@
 
 > 全功能暂未在社区开放,全功能版目前仅对商业版提供。
 
-- **email**
+- ## **email**
 > lhht0606@163.com
 
 - **wechat**
 > Forever-Destin
 
-## 支持提供定制化开发客户端可以联系WeChat
+# 支持提供定制化开发客户端可以联系WeChat
 
 ## 服务端图形化部署工具
 - https://space.bilibili.com/298384872
