@@ -1,68 +1,68 @@
 ---
-title: 贡献指南
-description: 如何为 android-xiaozhi 项目贡献代码
+title: Contribution Guide
+description: How to contribute code to the android-xiaozhi project
 sidebar: false
 outline: deep
 ---
 
 <div class="contributing-page">
 
-# 贡献指南
+# Contribution Guide
 
 <div class="header-content">
-  <h2>如何为 android-xiaozhi 项目贡献代码 🚀</h2>
+  <h2>How to contribute code to the android-xiaozhi project 🚀</h2>
 </div>
 
-## 前言
+## Preface
 
-感谢您对 android-xiaozhi 项目感兴趣！我们非常欢迎社区成员参与贡献，无论是修复错误、改进文档还是添加新功能。本指南将帮助您了解如何向项目提交贡献。
+Thank you for your interest in the android-xiaozhi project! We warmly welcome community members to participate in contributions, whether it's fixing bugs, improving documentation, or adding new features. This guide will help you understand how to submit contributions to the project.
 
-## 开发环境准备
+## Development Environment Preparation
 
-### 基本要求
+### Basic Requirements
 
-- Flutter SDK 3.7.0 或更高版本
-- Dart SDK 3.7.0 或更高版本
-- Git 版本控制系统
-- Android Studio 或 Visual Studio Code (带 Flutter 插件)
-- Android SDK (用于 Android 开发)
-- Xcode (用于 iOS 开发，仅 macOS)
+- Flutter SDK 3.7.0 or higher
+- Dart SDK 3.7.0 or higher
+- Git version control system
+- Android Studio or Visual Studio Code (with Flutter plugin)
+- Android SDK (for Android development)
+- Xcode (for iOS development, macOS only)
 
-### 获取源代码
+### Get Source Code
 
-1. 首先，在 GitHub 上 Fork 本项目到您自己的账号
-   - 访问 [android-xiaozhi 项目页面](https://github.com/TOM88812/xiaozhi-android-client)
-   - 点击右上角的"Fork"按钮
-   - 等待 Fork 完成，您将被重定向到您的仓库副本
+1. First, Fork this project to your own account on GitHub
+   - Visit [android-xiaozhi project page](https://github.com/TOM88812/xiaozhi-android-client)
+   - Click the "Fork" button in the top right corner
+   - Wait for Fork to complete, you will be redirected to your repository copy
 
-2. 克隆您 fork 的仓库到本地：
+2. Clone your forked repository to local:
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/xiaozhi-android.git
 cd xiaozhi-android-client
 ```
 
-3. 添加上游仓库作为远程源：
+3. Add upstream repository as remote source:
 
 ```bash
 git remote add upstream https://github.com/TOM88812/xiaozhi-android-client.git
 ```
 
-你可以使用 `git remote -v` 命令确认远程仓库已正确配置：
+You can use `git remote -v` command to confirm the remote repository is correctly configured:
 
 ```bash
 git remote -v
-# 应显示：
+# Should display:
 # origin    https://github.com/YOUR_USERNAME/xiaozhi-android-client.git (fetch)
 # origin    https://github.com/YOUR_USERNAME/xiaozhi-android-client.git (push)
 # upstream  https://github.com/TOM88812/xiaozhi-android-client.git (fetch)
 # upstream  https://github.com/TOM88812/xiaozhi-android-client.git (push)
 ```
 
-### 安装开发依赖
+### Install Development Dependencies
 
 ```bash
-# 安装Flutter依赖
+# Install Flutter dependencies
 flutter pub get
 ```
 
@@ -444,4 +444,4 @@ pnpm docs:dev
   border-radius: 8px;
   overflow: auto;
 }
-</style> 
+</style>

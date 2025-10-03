@@ -1,6 +1,6 @@
 ---
-title: 赞助支持
-description: 感谢所有赞助者的支持
+title: Sponsorship Support
+description: Thanks to all sponsors for their support
 sidebar: false
 outline: deep
 ---
@@ -11,10 +11,10 @@ import SponsorsList from './SponsorsList.vue'
 
 <div class="sponsors-page">
 
-# 赞助支持
+# Sponsorship Support
 
 <div class="header-content">
-  <h2>感谢所有赞助者的支持 ❤️</h2>
+  <h2>Thanks to all sponsors for their support ❤️</h2>
 </div>
 
 <div class="sponsors-section">
@@ -22,32 +22,32 @@ import SponsorsList from './SponsorsList.vue'
 
 <SponsorsList />
 
-## 成为赞助者
+## Become a Sponsor
 
-请通过以下方式进行赞助：
-您的赞助将用于：
-- 支持设备兼容性测试
-- 新功能开发和维护
+Please support through the following methods:
+Your sponsorship will be used for:
+- Supporting device compatibility testing
+- New feature development and maintenance
 
 
 <div class="payment-container">
   <div class="payment-method">
-    <h4>微信支付</h4>
+    <h4>WeChat Pay</h4>
     <div class="qr-code">
-      <img src="./images/zsm.jpg" alt="微信收款码">
+      <img src="./images/zsm.jpg" alt="WeChat Payment QR Code">
     </div>
   </div>
 </div>
 
-### 设备兼容性支持
+### Device Compatibility Support
 
-您可以通过以下方式支持设备兼容性：
-- 在赞助备注中说明您的设备型号，我会优先支持这些设备
-- 直接赞助/捐赠硬件设备，帮助我进行开发和适配测试
-- 提供设备的详细参数和使用场景，便于我更好地进行开发
+You can support device compatibility through the following ways:
+- Specify your device model in the sponsorship notes, I will prioritize support for these devices
+- Directly sponsor/donate hardware devices to help with development and compatibility testing
+- Provide detailed device parameters and usage scenarios to facilitate better development
 
-::: tip 联系方式
-硬件赞助请通过GitHub主页的邮箱联系我，以便协商寄送方式和地址
+::: tip Contact Information
+For hardware sponsorship, please contact me via the email on the GitHub homepage to discuss shipping methods and addresses
 :::
 
 </div>
@@ -129,4 +129,4 @@ import SponsorsList from './SponsorsList.vue'
     height: 180px;
   }
 }
-</style> 
+</style>
