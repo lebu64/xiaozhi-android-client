@@ -66,339 +66,338 @@ git remote -v
 flutter pub get
 ```
 
-## 开发流程
+## Development Process
 
-### 与主仓库保持同步
+### Keeping in Sync with Main Repository
 
-在开始工作之前，确保您的本地仓库与主项目保持同步是非常重要的。以下是同步本地仓库的步骤：
+Before starting work, it's very important to ensure your local repository stays synchronized with the main project. Here are the steps to synchronize your local repository:
 
-1. 切换到您的主分支（`main`）：
+1. Switch to your main branch (`main`):
 
 ```bash
 git checkout main
 ```
 
-2. 拉取上游仓库的最新更改：
+2. Pull the latest changes from the upstream repository:
 
 ```bash
 git fetch upstream
 ```
 
-3. 将上游主分支的更改合并到您的本地主分支：
+3. Merge changes from the upstream main branch to your local main branch:
 
 ```bash
 git merge upstream/main
 ```
 
-4. 将更新后的本地主分支推送到您的 GitHub 仓库：
+4. Push the updated local main branch to your GitHub repository:
 
 ```bash
 git push origin main
 ```
 
-### 创建分支
+### Creating Branches
 
-在开始任何工作之前，请确保从最新的上游主分支创建新的分支：
+Before starting any work, make sure to create a new branch from the latest upstream main branch:
 
 ```bash
-# 获取最新的上游代码（如上节所述）
+# Get the latest upstream code (as described in the previous section)
 git fetch upstream
 git checkout -b feature/your-feature-name upstream/main
 ```
 
-为分支命名时，可以遵循以下约定：
-- `feature/xxx`：新功能开发
-- `fix/xxx`：修复 bug
-- `docs/xxx`：文档更新
-- `test/xxx`：测试相关工作
-- `refactor/xxx`：代码重构
+When naming branches, you can follow these conventions:
+- `feature/xxx`: New feature development
+- `fix/xxx`: Bug fixes
+- `docs/xxx`: Documentation updates
+- `test/xxx`: Testing related work
+- `refactor/xxx`: Code refactoring
 
-### 编码规范
+### Coding Standards
 
-我们使用 Flutter 官方推荐的代码风格指南。在提交代码前，请确保您的代码符合以下要求：
+We use Flutter's officially recommended code style guide. Before submitting code, please ensure your code meets the following requirements:
 
-- 使用 2 个空格进行缩进
-- 行长度不超过 120 个字符
-- 使用有意义的变量和函数名称
-- 为公共 API 添加文档注释
-- 使用 Dart 类型系统
+- Use 2 spaces for indentation
+- Line length should not exceed 120 characters
+- Use meaningful variable and function names
+- Add documentation comments for public APIs
+- Use Dart type system
 
-我们推荐使用 Flutter 的静态代码分析工具来帮助您遵循编码规范：
+We recommend using Flutter's static code analysis tools to help you follow coding standards:
 
 ```bash
-# 使用 dart analyze 检查代码
+# Use dart analyze to check code
 flutter analyze
 ```
 
-### 测试
+### Testing
 
-在提交之前，请确保所有测试都能通过：
+Before submitting, make sure all tests pass:
 
 ```bash
 flutter test
 ```
 
-## 提交变更
+## Submitting Changes
 
-### 提交前的检查清单
+### Pre-submission Checklist
 
-在提交您的代码之前，请确保完成以下检查：
+Before submitting your code, please ensure you complete the following checks:
 
-1. 代码是否符合 Flutter 编码规范
-2. 是否添加了必要的测试用例
-3. 所有测试是否通过
-4. 是否添加了适当的文档
-5. 是否解决了您计划解决的问题
-6. 是否与最新的上游代码保持同步
+1. Does the code comply with Flutter coding standards
+2. Have necessary test cases been added
+3. Do all tests pass
+4. Has appropriate documentation been added
+5. Has the problem you planned to solve been resolved
+6. Is it synchronized with the latest upstream code
 
-### 提交变更
+### Submitting Changes
 
-在开发过程中，养成小批量、频繁提交的习惯。这样可以使您的更改更容易跟踪和理解：
+During development, develop the habit of making small, frequent commits. This makes your changes easier to track and understand:
 
 ```bash
-# 查看更改的文件
+# View changed files
 git status
 
-# 暂存更改
+# Stage changes
 git add lib/feature.dart test/feature_test.dart
 
-# 提交更改
+# Commit changes
 git commit -m "feat: add new feature X"
 ```
 
-### 解决冲突
+### Resolving Conflicts
 
-如果您在尝试合并上游更改时遇到冲突，请按照以下步骤解决：
+If you encounter conflicts when trying to merge upstream changes, please follow these steps to resolve them:
 
-1. 首先了解冲突的位置：
+1. First understand where the conflicts are:
 
 ```bash
 git status
 ```
 
-2. 打开冲突文件，您会看到类似以下标记：
+2. Open the conflicting file, you will see markers similar to the following:
 
 ```
-上游代码
+Upstream code
 ```
 
-3. 修改文件以解决冲突，删除冲突标记
-4. 解决完所有冲突后，暂存并提交：
+3. Modify the file to resolve conflicts, remove conflict markers
+4. After resolving all conflicts, stage and commit:
 
 ```bash
 git add .
 git commit -m "fix: resolve merge conflicts"
 ```
 
-### 提交规范
+### Commit Specification
 
-我们使用[约定式提交](https://www.conventionalcommits.org/zh-hans/)规范来格式化 Git 提交消息。提交消息应该遵循以下格式：
-
-```
-<类型>[可选 作用域]: <描述>
-
-[可选 正文]
-
-[可选 脚注]
-```
-
-常用的提交类型包括：
-- `feat`：新功能
-- `fix`：错误修复
-- `docs`：文档更改
-- `style`：不影响代码含义的变更（如空格、格式化等）
-- `refactor`：既不修复错误也不添加功能的代码重构
-- `perf`：提高性能的代码更改
-- `test`：添加或修正测试
-- `chore`：对构建过程或辅助工具和库的更改
-
-例如：
+We use [Conventional Commits](https://www.conventionalcommits.org/) specification to format Git commit messages. Commit messages should follow this format:
 
 ```
-feat(tts): 添加新的语音合成引擎支持
+<type>[optional scope]: <description>
 
-添加对百度语音合成API的支持，包括以下功能：
-- 支持多种音色选择
-- 支持语速和音量调节
-- 支持中英文混合合成
+[optional body]
 
-修复 #123
+[optional footer]
 ```
 
-### 推送更改
+Common commit types include:
+- `feat`: New feature
+- `fix`: Bug fix
+- `docs`: Documentation changes
+- `style`: Changes that don't affect code meaning (such as whitespace, formatting, etc.)
+- `refactor`: Code refactoring that neither fixes bugs nor adds features
+- `perf`: Performance improvement code changes
+- `test`: Adding or correcting tests
+- `chore`: Changes to build process or auxiliary tools and libraries
 
-完成代码更改后，将您的分支推送到您的 GitHub 仓库：
+For example:
+
+```
+feat(tts): Add new speech synthesis engine support
+
+Add support for Baidu speech synthesis API, including the following features:
+- Support for multiple voice options
+- Support for speech rate and volume adjustment
+- Support for mixed Chinese-English synthesis
+
+Fixes #123
+```
+
+### Pushing Changes
+
+After completing code changes, push your branch to your GitHub repository:
 
 ```bash
 git push origin feature/your-feature-name
 ```
 
-如果您已经创建了 Pull Request，并且需要更新它，只需再次推送到同一分支即可：
+If you have already created a Pull Request and need to update it, simply push to the same branch again:
 
 ```bash
-# 在进行更多更改后
+# After making more changes
 git add .
 git commit -m "refactor: improve code based on feedback"
 git push origin feature/your-feature-name
 ```
 
-### 创建 Pull Request 前同步最新代码
+### Synchronize Latest Code Before Creating Pull Request
 
-在创建 Pull Request 前，建议再次与上游仓库同步，以避免潜在的冲突：
+Before creating a Pull Request, it's recommended to synchronize with the upstream repository again to avoid potential conflicts:
 
 ```bash
-# 获取上游最新代码
+# Get the latest upstream code
 git fetch upstream
 
-# 将上游最新代码变基到您的特性分支
+# Rebase the latest upstream code onto your feature branch
 git rebase upstream/main
 
-# 如果出现冲突，解决冲突并继续变基
+# If conflicts occur, resolve conflicts and continue rebase
 git add .
 git rebase --continue
 
-# 强制推送更新后的分支到您的仓库
+# Force push the updated branch to your repository
 git push --force-with-lease origin feature/your-feature-name
 ```
 
-注意：使用 `--force-with-lease` 比直接使用 `--force` 更安全，它可以防止覆盖他人推送的更改。
+Note: Using `--force-with-lease` is safer than directly using `--force`, as it prevents overwriting changes pushed by others.
 
-### 创建 Pull Request
+### Creating Pull Request
 
-当您完成功能开发或问题修复后，请按照以下步骤创建 Pull Request：
+When you complete feature development or issue fixes, please follow these steps to create a Pull Request:
 
-1. 将您的更改推送到 GitHub：
+1. Push your changes to GitHub:
 
 ```bash
 git push origin feature/your-feature-name
 ```
 
-2. 访问 GitHub 上您 fork 的仓库页面，点击 "Compare & pull request" 按钮
+2. Visit your forked repository page on GitHub, click the "Compare & pull request" button
 
-3. 填写 Pull Request 表单：
-   - 使用清晰的标题，遵循提交消息格式
-   - 在描述中提供详细信息
-   - 引用相关 issue（使用 `#issue编号` 格式）
-   - 如果这是一个进行中的工作，请添加 `[WIP]` 前缀到标题
+3. Fill out the Pull Request form:
+   - Use a clear title, following commit message format
+   - Provide detailed information in the description
+   - Reference related issues (using `#issue-number` format)
+   - If this is work in progress, add `[WIP]` prefix to the title
 
-4. 提交 Pull Request，等待项目维护者审核
+4. Submit the Pull Request and wait for project maintainers to review
 
-### Pull Request 的生命周期
+### Pull Request Lifecycle
 
-1. **创建**：提交您的 PR
-2. **CI 检查**：自动化测试和代码风格检查
-3. **代码审核**：维护者会审核您的代码并提供反馈
-4. **修订**：根据反馈修改您的代码
-5. **批准**：一旦您的 PR 被批准
-6. **合并**：维护者会将您的 PR 合并到主分支
+1. **Creation**: Submit your PR
+2. **CI Checks**: Automated testing and code style checks
+3. **Code Review**: Maintainers will review your code and provide feedback
+4. **Revision**: Modify your code based on feedback
+5. **Approval**: Once your PR is approved
+6. **Merge**: Maintainers will merge your PR into the main branch
 
-## 文档贡献
+## Documentation Contribution
 
-如果您想改进项目文档，请按照以下步骤操作：
+If you want to improve project documentation, please follow these steps:
 
-1. 按照上述步骤 Fork 项目并克隆到本地
+1. Follow the steps above to Fork the project and clone it locally
 
-2. 文档位于 `documents/docs` 目录下，使用 Markdown 格式
+2. Documentation is located in the `documents/docs` directory, using Markdown format
 
-3. 安装文档开发依赖：
+3. Install documentation development dependencies:
 
 ```bash
 cd documents
 pnpm install
 ```
 
-4. 启动本地文档服务器：
+4. Start local documentation server:
 
 ```bash
 pnpm docs:dev
 ```
 
-5. 在浏览器中访问 `http://localhost:5173/xiaozhi-android/` 预览您的更改
+5. Visit `http://localhost:5173/xiaozhi-android/` in your browser to preview your changes
 
-6. 完成更改后，提交您的贡献并创建 Pull Request
+6. After completing changes, submit your contribution and create a Pull Request
 
-### 文档编写准则
+### Documentation Writing Guidelines
 
-- 使用清晰、简洁的语言
-- 提供实际示例
-- 对复杂概念进行详细解释
-- 包含适当的截图或图表（需要时）
-- 避免技术术语过多，必要时提供解释
-- 保持文档结构一致
+- Use clear, concise language
+- Provide practical examples
+- Provide detailed explanations for complex concepts
+- Include appropriate screenshots or diagrams (when needed)
+- Avoid excessive technical terminology, provide explanations when necessary
+- Maintain consistent documentation structure
 
-## 问题反馈
+## Issue Reporting
 
-如果您发现了问题但暂时无法修复，请在 GitHub 上[创建 Issue](https://github.com/huangjunsen0406/xiaozhi-android/issues/new)。创建 Issue 时，请包含以下信息：
+If you discover a problem but cannot fix it temporarily, please [create an Issue](https://github.com/huangjunsen0406/xiaozhi-android/issues/new) on GitHub. When creating an Issue, please include the following information:
 
-- 问题的详细描述
-- 重现问题的步骤
-- 预期行为和实际行为
-- 您的操作系统和 Python 版本
-- 相关的日志输出或错误信息
+- Detailed description of the problem
+- Steps to reproduce the problem
+- Expected behavior and actual behavior
+- Your operating system and Python version
+- Relevant log output or error information
 
-## 代码审核
+## Code Review
 
-提交 Pull Request 后，项目维护者将会审核您的代码。在代码审核过程中：
+After submitting a Pull Request, project maintainers will review your code. During the code review process:
 
-- 请耐心等待反馈
-- 及时响应评论和建议
-- 必要时进行修改并更新您的 Pull Request
-- 保持礼貌和建设性的讨论
+- Please wait patiently for feedback
+- Respond promptly to comments and suggestions
+- Make modifications and update your Pull Request when necessary
+- Maintain polite and constructive discussions
 
-### 处理代码审核反馈
+### Handling Code Review Feedback
 
-1. 认真阅读所有评论和建议
-2. 针对每个要点作出回应或更改
-3. 如果您不同意某个建议，礼貌地解释您的理由
-4. 修改完成后，在 PR 中留言通知审核者
+1. Carefully read all comments and suggestions
+2. Respond to or change each point
+3. If you disagree with a suggestion, politely explain your reasoning
+4. After completing modifications, leave a message in the PR to notify the reviewer
 
-## 成为项目维护者
+## Becoming a Project Maintainer
 
-如果您持续为项目做出有价值的贡献，您可能会被邀请成为项目的维护者。作为维护者，您将有权限审核和合并其他人的 Pull Request。
+If you consistently make valuable contributions to the project, you may be invited to become a project maintainer. As a maintainer, you will have permission to review and merge others' Pull Requests.
 
-### 维护者的职责
+### Maintainer Responsibilities
 
-- 审核 Pull Request
-- 管理 issue
-- 参与项目规划
-- 回答社区问题
-- 帮助引导新贡献者
+- Review Pull Requests
+- Manage issues
+- Participate in project planning
+- Answer community questions
+- Help guide new contributors
 
-## 行为准则
+## Code of Conduct
 
-请尊重所有项目参与者，遵循以下行为准则：
+Please respect all project participants and follow this code of conduct:
 
-- 使用包容性语言
-- 尊重不同的观点和经验
-- 优雅地接受建设性批评
-- 关注社区最佳利益
-- 对其他社区成员表示同理心
+- Use inclusive language
+- Respect different viewpoints and experiences
+- Gracefully accept constructive criticism
+- Focus on the best interests of the community
+- Show empathy towards other community members
 
-## 常见问题解答
+## Frequently Asked Questions
 
-### 我应该从哪里开始贡献？
+### Where should I start contributing?
 
-1. 查看标记为 "good first issue" 的问题
-2. 修复文档中的错误或不清晰的部分
-3. 添加更多测试用例
-4. 解决您自己在使用过程中发现的问题
+1. Check issues marked as "good first issue"
+2. Fix errors or unclear parts in documentation
+3. Add more test cases
+4. Solve problems you discover during use
 
-### 我提交的 PR 已经很久没有回应了，我该怎么办？
+### My submitted PR hasn't received a response for a long time, what should I do?
 
-在 PR 中留言，礼貌地询问是否需要进一步的改进或澄清。请理解维护者可能很忙，需要一些时间来审核您的贡献。
+Leave a message in the PR, politely asking if further improvements or clarifications are needed. Please understand that maintainers may be busy and need some time to review your contribution.
 
-### 我可以贡献哪些类型的更改？
+### What types of changes can I contribute?
 
-- 错误修复
-- 新功能
-- 性能改进
-- 文档更新
-- 测试用例
-- 代码重构
+- Bug fixes
+- New features
+- Performance improvements
+- Documentation updates
+- Test cases
 
-## 致谢
+## Acknowledgments
 
-再次感谢您为项目做出贡献！您的参与对我们非常重要，共同努力让 android-xiaozhi 变得更好！
+Thank you again for contributing to the project! Your participation is very important to us, let's work together to make android-xiaozhi better!
 
 </div>
 
