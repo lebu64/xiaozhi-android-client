@@ -1,76 +1,76 @@
-# Flutter安装与配置指南
+# Flutter Installation and Configuration Guide
 
-本文档提供了AI Assistant应用的安装和配置详细说明，包括环境搭建、依赖安装和平台特定的配置步骤。
+This document provides detailed instructions for installing and configuring the AI Assistant application, including environment setup, dependency installation, and platform-specific configuration steps.
 
-## 1. Flutter SDK安装
+## 1. Flutter SDK Installation
 
 ### Windows
-1. 下载 [Flutter SDK](https://flutter.dev/docs/get-started/install/windows)
-2. 解压到不带特殊字符和空格的目录（如 `C:\flutter`）
-3. 将 `flutter\bin` 添加到系统 PATH 变量
-4. 打开命令提示符或PowerShell，运行 `flutter doctor` 以验证并解决潜在问题
+1. Download [Flutter SDK](https://flutter.dev/docs/get-started/install/windows)
+2. Extract to a directory without special characters or spaces (e.g., `C:\flutter`)
+3. Add `flutter\bin` to the system PATH variable
+4. Open Command Prompt or PowerShell, run `flutter doctor` to verify and resolve potential issues
 
 ### macOS
-1. 使用 Homebrew 安装（推荐）:
+1. Install using Homebrew (recommended):
    ```bash
    brew install --cask flutter
    ```
-2. 或下载 [Flutter SDK](https://flutter.dev/docs/get-started/install/macos) 并手动解压
-3. 将 Flutter 添加到 PATH:
+2. Or download [Flutter SDK](https://flutter.dev/docs/get-started/install/macos) and extract manually
+3. Add Flutter to PATH:
    ```bash
    export PATH="$PATH:`pwd`/flutter/bin"
    ```
-4. 运行 `flutter doctor` 检查配置
+4. Run `flutter doctor` to check configuration
 
 ### Linux
-1. 下载 [Flutter SDK](https://flutter.dev/docs/get-started/install/linux)
-2. 解压文件:
+1. Download [Flutter SDK](https://flutter.dev/docs/get-started/install/linux)
+2. Extract files:
    ```bash
    tar xf flutter_linux_3.7.0-stable.tar.xz
    ```
-3. 添加 Flutter 到 PATH:
+3. Add Flutter to PATH:
    ```bash
    export PATH="$PATH:`pwd`/flutter/bin"
    ```
-4. 运行 `flutter doctor` 进行配置检查
+4. Run `flutter doctor` for configuration check
 
-## 2. 安装开发工具
+## 2. Install Development Tools
 
-推荐使用以下IDE之一进行开发:
+Recommended to use one of the following IDEs for development:
 
 - **Visual Studio Code**
-  - 安装 [Flutter 插件](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter)
-  - 安装 [Dart 插件](https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code)
+  - Install [Flutter plugin](https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter)
+  - Install [Dart plugin](https://marketplace.visualstudio.com/items?itemName=Dart-Code.dart-code)
 
 - **Android Studio / IntelliJ IDEA**
-  - 安装 Flutter 和 Dart 插件 (Preferences > Plugins > 搜索 "Flutter")
+  - Install Flutter and Dart plugins (Preferences > Plugins > Search "Flutter")
 
-## 3. 平台特定设置
+## 3. Platform-Specific Settings
 
-### Android开发
-1. 安装 [Android Studio](https://developer.android.com/studio)
-2. 安装 Android SDK (通过 Android Studio 的 SDK Manager)
-3. 设置 Android 设备进行开发:
-   - 启用 USB 调试（开发者选项）
-   - 或使用 Android 模拟器
+### Android Development
+1. Install [Android Studio](https://developer.android.com/studio)
+2. Install Android SDK (via Android Studio's SDK Manager)
+3. Set up Android device for development:
+   - Enable USB debugging (Developer Options)
+   - Or use Android emulator
 
-### iOS开发 (仅限macOS)
-1. 安装 [Xcode](https://apps.apple.com/us/app/xcode/id497799835)
-2. 配置 iOS 模拟器或实际设备
-3. 安装 CocoaPods:
+### iOS Development (macOS only)
+1. Install [Xcode](https://apps.apple.com/us/app/xcode/id497799835)
+2. Configure iOS simulator or physical device
+3. Install CocoaPods:
    ```bash
    sudo gem install cocoapods
    ```
 
-### Web开发
-1. 确保已安装 Chrome 浏览器
-2. 启用 Flutter web 支持:
+### Web Development
+1. Ensure Chrome browser is installed
+2. Enable Flutter web support:
    ```bash
    flutter config --enable-web
    ```
 
-### Windows/macOS/Linux桌面应用开发
-1. 启用对应平台支持:
+### Windows/macOS/Linux Desktop App Development
+1. Enable corresponding platform support:
    ```bash
    # Windows
    flutter config --enable-windows-desktop
@@ -82,60 +82,60 @@
    flutter config --enable-linux-desktop
    ```
 
-## 4. 项目设置
+## 4. Project Setup
 
-1. 克隆项目仓库:
+1. Clone the project repository:
    ```bash
    git clone https://github.com/your-username/ai_assistant.git
    cd ai_assistant
    ```
 
-2. 获取依赖:
+2. Get dependencies:
    ```bash
    flutter pub get
    ```
 
-3. 根据需要配置 Firebase 或其他云服务 (如适用)
+3. Configure Firebase or other cloud services as needed (if applicable)
 
-## 5. 配置AI服务
+## 5. Configure AI Services
 
-### 小智服务配置
-1. 在应用中导航至"设置" > "小智服务"
-2. 输入以下信息:
-   - 名称: 为该配置指定一个识别名称
-   - WebSocket URL: 小智服务端的WebSocket连接地址
-   - MAC地址: 设备MAC地址（适用于蓝牙设备）
-   - 令牌: 认证令牌
+### Xiaozhi Service Configuration
+1. Navigate to "Settings" > "Xiaozhi Service" in the app
+2. Enter the following information:
+   - Name: Specify an identification name for this configuration
+   - WebSocket URL: WebSocket connection address for Xiaozhi service
+   - MAC Address: Device MAC address (for Bluetooth devices)
+   - Token: Authentication token
 
-### Dify配置
-1. 访问 [Dify官网](https://dify.ai/) 创建账户并获取API密钥
-2. 在应用设置中添加新的Dify配置:
-   - 名称: 自定义配置名称
-   - API Key: 从Dify控制台获取的密钥
-   - API URL: Dify服务的API端点
+### Dify Configuration
+1. Visit [Dify official website](https://dify.ai/) to create an account and get API key
+2. Add new Dify configuration in app settings:
+   - Name: Custom configuration name
+   - API Key: Key obtained from Dify console
+   - API URL: API endpoint for Dify service
 
-### OpenAI配置
-1. 从 [OpenAI开发者平台](https://platform.openai.com/) 获取API密钥
-2. 在应用设置中配置:
-   - API Key: OpenAI API密钥
-   - 组织ID (可选): 如有组织账户需填写
-   - 模型: 选择所需的GPT模型（如gpt-4、gpt-3.5-turbo）
-   - 系统提示: 设置默认的系统提示词
+### OpenAI Configuration
+1. Get API key from [OpenAI Developer Platform](https://platform.openai.com/)
+2. Configure in app settings:
+   - API Key: OpenAI API key
+   - Organization ID (optional): Fill if you have an organization account
+   - Model: Select desired GPT model (e.g., gpt-4, gpt-3.5-turbo)
+   - System Prompt: Set default system prompt
 
-## 6. 运行应用
+## 6. Run the Application
 
 ```bash
-# 在连接的设备上运行
+# Run on connected device
 flutter run
 
-# 指定平台运行
+# Run on specific platform
 flutter run -d windows
 flutter run -d macos
 flutter run -d chrome
 flutter run -d <device-id>
 ```
 
-## 7. 构建发布版本
+## 7. Build Release Version
 
 ```bash
 # Android APK
@@ -160,43 +160,43 @@ flutter build macos --release
 flutter build linux --release
 ```
 
-## 8. 权限说明
+## 8. Permission Description
 
-应用可能需要以下权限:
-- **麦克风**: 用于语音识别和录音功能
-- **蓝牙**: 用于连接物联网设备
-- **相机**: 用于视觉识别功能
-- **存储**: 用于保存音频和图片文件
+The application may require the following permissions:
+- **Microphone**: For voice recognition and recording functions
+- **Bluetooth**: For connecting IoT devices
+- **Camera**: For visual recognition functions
+- **Storage**: For saving audio and image files
 
-请确保在使用相应功能前授予所需权限。
+Please ensure to grant required permissions before using corresponding functions.
 
-## 9. 故障排除
+## 9. Troubleshooting
 
-### 常见问题
+### Common Issues
 
-1. **Flutter SDK 未找到**
-   - 确认 Flutter 已正确添加到系统 PATH
-   - 检查 `flutter doctor` 输出是否有错误
+1. **Flutter SDK Not Found**
+   - Confirm Flutter is correctly added to system PATH
+   - Check `flutter doctor` output for errors
 
-2. **依赖获取失败**
-   - 尝试使用国内镜像源:
+2. **Dependency Fetch Failed**
+   - Try using domestic mirror sources:
      ```bash
      export PUB_HOSTED_URL=https://pub.flutter-io.cn
      export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
      ```
-   - 清除缓存后重试:
+   - Clear cache and retry:
      ```bash
      flutter clean
      flutter pub cache repair
      flutter pub get
      ```
 
-3. **编译错误**
-   - 查看详细错误信息: `flutter run -v`
-   - 确保使用支持的 Flutter SDK 版本 (^3.7.0)
+3. **Compilation Error**
+   - View detailed error information: `flutter run -v`
+   - Ensure using supported Flutter SDK version (^3.7.0)
 
-4. **iOS构建失败**
-   - 删除 Pods 目录并重新安装:
+4. **iOS Build Failed**
+   - Delete Pods directory and reinstall:
      ```bash
      cd ios
      rm -rf Pods
@@ -205,12 +205,12 @@ flutter build linux --release
      flutter run
      ```
 
-5. **Android Gradle 同步失败**
-   - 编辑 `android/gradle.properties` 添加代理设置或使用国内镜像
+5. **Android Gradle Sync Failed**
+   - Edit `android/gradle.properties` to add proxy settings or use domestic mirror
 
-## 10. 参考资源
+## 10. Reference Resources
 
-- [Flutter 官方文档](https://flutter.dev/docs)
-- [Dart 官方文档](https://dart.dev/guides)
-- [Flutter Pub 包管理](https://pub.dev/)
-- [Flutter 社区中文资源](https://flutter.cn/) 
+- [Flutter Official Documentation](https://flutter.dev/docs)
+- [Dart Official Documentation](https://dart.dev/guides)
+- [Flutter Pub Package Management](https://pub.dev/)
+- [Flutter Community Chinese Resources](https://flutter.cn/)
